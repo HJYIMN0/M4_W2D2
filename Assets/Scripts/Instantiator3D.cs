@@ -14,8 +14,6 @@ public class Instantiator3D : MonoBehaviour
 
     [SerializeField] private GameObject _box;
 
-    private Vector3 _originalScale = new Vector3(1, 1, 1);
-
     private void Start()
     {
         ScaleBoxes();
@@ -72,7 +70,7 @@ public class Instantiator3D : MonoBehaviour
 
     public void ScaleBoxes()
     {
-        _box.transform.localScale = _originalScale;
+        _box.transform.localScale = new Vector3(1, 1, 1);
         Vector3 scale = _box.transform.localScale;
         scale.x = Mathf.Max(0.1f, scale.x *= _horizontalScale);
         scale.y = Mathf.Max(0.1f, scale.y *= _verticalScale);
